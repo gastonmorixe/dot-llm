@@ -2,6 +2,9 @@
 
 **dot-llm** is a Ruby gem that integrates with Ruby on Rails to deliver responses optimized for large language models (LLMs) by converting HTML into a simplified Markdown format. It registers a new MIME type (`text/llm`) and provides a custom renderer that extracts core content from your HTML—removing extraneous elements like navigation, headers, footers, and more—while converting important HTML elements (for example, bold text) into Markdown.
 
+> [!IMPORTANT]  
+> If you see this note it means that this gem is still a WIP and it hasn't been published yet. DO NOT USE IT IN PRODUCTION. 
+
 ## Features
 
 - **Custom LLM Response Format:**  
