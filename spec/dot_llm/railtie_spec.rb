@@ -66,11 +66,11 @@ RSpec.describe 'Response Formats' do
   end
 
   it 'returns Markdown for LLM requests via FormatsTestController' do
-    env = Rack::MockRequest.env_for('/formats', 'HTTP_ACCEPT' => 'text/llm')
+    env = Rack::MockRequest.env_for('/formats', 'HTTP_ACCEPT' => 'text/markdown')
     status, headers, body = DummyApp.call(env)
 
     expect(status).to eq(200)
-    expect(headers['Content-Type']).to include('text/llm')
+    expect(headers['Content-Type']).to include('text/markdown')
 
     content = ''
     body.each { |part| content << part.to_s }
@@ -82,11 +82,11 @@ RSpec.describe 'Response Formats' do
   end
 
   it 'returns Markdown for LLM requests via TestController' do
-    env = Rack::MockRequest.env_for('/test', 'HTTP_ACCEPT' => 'text/llm')
+    env = Rack::MockRequest.env_for('/test', 'HTTP_ACCEPT' => 'text/markdown')
     status, headers, body = DummyApp.call(env)
 
     expect(status).to eq(200)
-    expect(headers['Content-Type']).to include('text/llm')
+    expect(headers['Content-Type']).to include('text/markdown')
 
     content = ''
     body.each { |part| content << part.to_s }
